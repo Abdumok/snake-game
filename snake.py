@@ -25,15 +25,23 @@ class Snake:
         self.head.forward(20)
 
     def up(self):
-        self.head.setheading(90)
+        # To avoid the snake turning 180 degree on him self:
+        if self.head.heading() != 270:
+            self.head.setheading(90)
 
     def down(self):
-        self.head.setheading(270)
+        # To avoid the snake turning 180 degree on him self:
+        if self.head.heading() != 90:
+            self.head.setheading(270)
 
     def left(self):
-        self.head.setheading(180)
+        # To avoid the snake turning 180 degree on him self:
+        if self.head.heading() != 0:
+            self.head.setheading(180)
 
     def right(self):
-        self.head.setheading(0)
+        # To avoid the snake turning 180 degree on him self:
+        if self.head.heading() != 180:
+            self.head.setheading(0)
 
 
