@@ -6,6 +6,7 @@ class Snake:
     def __init__(self):
         self.all_part= []
         self.create_snake()
+        self.head= self.all_part[-1]
 
     def create_snake(self):
         for pos in POSITION:
@@ -21,4 +22,18 @@ class Snake:
         for i in range(len(self.all_part) - 1 ):
             self.all_part[i].goto(self.all_part[i+1].pos())
         # moving head of the snake
-        self.all_part[-1].forward(20)
+        self.head.forward(20)
+
+    def up(self):
+        self.head.setheading(90)
+
+    def down(self):
+        self.head.setheading(270)
+
+    def left(self):
+        self.head.setheading(180)
+
+    def right(self):
+        self.head.setheading(0)
+
+
