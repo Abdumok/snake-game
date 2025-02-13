@@ -26,6 +26,19 @@ game_on=True
 while game_on:
     snaky.move()
 
+    #Detect collision with food
+    if snaky.head.distance(food) < 15:
+        food.relocate()
+
+    # Detect collision with The wall:
+    if ((snaky.head.xcor() > 330) or (snaky.head.xcor() < -330) or
+        (snaky.head.ycor() > 330) or (snaky.head.ycor() < -330)):
+        game_on =False
+
+    # Detect collision with snake body:
+    for part in snaky.all_part[0:-1]:
+        if snaky.head.distance(part) < 5:
+            game_on = False
 
     window.update()
     time.sleep(0.1)
