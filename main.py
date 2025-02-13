@@ -1,6 +1,7 @@
 from turtle import Screen
 from snake import Snake
 from food import Food
+from score import Score
 import time
 window = Screen()
 window.title("Snake Game v1.00")
@@ -21,6 +22,9 @@ window.onkey(fun=snaky.right, key="Right")
 
 #initial Food:
 food= Food()
+
+#initial Score obj:
+score= Score()
 
 game_on=True
 while game_on:
