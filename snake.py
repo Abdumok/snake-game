@@ -44,4 +44,11 @@ class Snake:
         if self.head.heading() != 180:
             self.head.setheading(0)
 
+    def go_big(self):
+        part= Turtle()
+        part.color('white')
+        part.shape('square')
+        part.penup()
+        part.goto(self.all_part[0].pos())
+        self.all_part.insert(0, part)
 
